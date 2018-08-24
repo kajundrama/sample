@@ -1,0 +1,93 @@
+@CHARSET "EUC-KR";
+
+.finger {
+	font-weight: bold;
+}
+
+.cnt_visual{position:relative; overflow:hidden; background:#fff;}
+.cnt_visual .im_box{position:relative; height:635px; background-position: top center; background-size: cover;}
+.cnt_visual .im_box img{width:100%;}
+.cnt_visual .im_box:after{display:none;}
+.cnt_visual .im_box .copy{position:absolute; top:0; bottom:0; z-index:1; color:#fff; text-align:center; width:100%; -webkit-transform: translateZ(0px);}
+.cnt_visual .im_box .copy > .vb_txt{display:table; width:100%; height:560px;}
+.cnt_visual .im_box .copy > .vb_txt .txt_cnt{display:table-cell; vertical-align:middle; }
+.cnt_visual .im_box .copy .eye{font-size:1.8rem; line-height:38px; height:47px; text-transform:uppercase;}
+.cnt_visual .im_box .copy .logo{margin-bottom:20px;}
+.cnt_visual .im_box .copy .tit{font-size:5.2rem; line-height: 76px; font-weight:bold; width:960px; margin:0 auto; word-break:keep-all;  font-family: 'SharpSansNo1','nanumsquare';}
+.cnt_visual .im_box .copy .tit sup{font-size:2rem; display:inline-block; vertical-align: top; margin-top:6px; }
+.cnt_visual .im_box .copy .tit sup.sup_r{font-size:2.5rem; margin:0 0 0 2px;}
+.cnt_visual .im_box .copy .tit + .btn_btm{margin-top:44px;}
+.cnt_visual .im_box .copy .txt{font-size:1.8rem; font-weight:bold; line-height:32px; width:960px; padding-top:26px; margin:0 auto; font-family: 'SharpSansNo1','nanumsquare';}
+.cnt_visual .im_box .im{position:relative; min-height:349px;}
+.cnt_visual .im_box.video .video_wrap, .cnt_visual .im_box.video .video-js{width:1920px; height:850px;background:#fff;}
+.vjs-seeking .vjs-loading-spinner, .vjs-waiting .vjs-loading-spinner, .vjs-control-bar, .vjs-tracksettings, .vjs-error-display, .vjs-caption-settings{display:none;}
+.cnt_visual .im_box.video .video-js .vjs-tech{height:auto; min-height:100%; -webkit-tap-highlight-color:#fff; background:#fff;}
+.cnt_visual .im_box.video .vjs-big-play-button {display:none;}
+.cnt_visual .vb_txt .btn.mid{color:#fff; height:43px; border:1px solid #fff;}
+.cnt_visual .vb_txt .btn.mid:hover{color:#000; background:#fff;}
+.cnt_visual .owl-carousel{ position: relative; z-index:0; overflow:hidden;}
+.cnt_visual .owl-controls {top:0; text-align:center;}
+.cnt_visual .owl-controls .owl-nav {top:155px; width: 100%;}
+.cnt_visual .owl-controls .owl-nav .owl-prev{position: absolute; left:0; z-index: 8;}
+.cnt_visual .owl-controls .owl-nav .owl-next{position: absolute; right:0; z-index: 8;}
+.cnt_visual .owl-carousel .owl-dots{top:463px;}
+.cnt_visual .owl-carousel .owl-dot span{width:9px; height:9px; border:1px solid #fff; background:none;}
+.cnt_visual .owl-carousel .owl-dot.active span{background:#fff;}
+
+.cnt_visual .hero_vb{position:relative; height:635px;}
+.cnt_visual .hero_vb:after{content: '';position: absolute;width: 2560px;height: 300px;left: 50%; bottom: -162px; z-index:0; background-color: #fff;-webkit-backface-visibility: hidden; backface-visibility: hidden;outline: 2px solid transparent;border: 0 solid transparent;border-width: 1px 0;-webkit-transform: translate(-50%, 0) skewY(-8.2deg);-ms-transform: translate(-50%, 0) skewY(-8.2deg);transform: translate(-50%, 0) skewY(-8.2deg);}
+.cnt_visual .inner{ position:relative; z-index:1; margin: 0 auto 100px; text-align: center;}
+.cnt_visual .h4{position:relative; z-index: 2; font-size:3.8rem; font-weight:bold; line-height: 50px; letter-spacing:-0.01em; word-break:keep-all; max-width:900px; margin:-10px auto 0;}
+.cnt_visual .h4 .ico{position:absolute; top:0; left:50%; z-index:1; width:30px; height:18px; margin-left:-15px; background-position:-64px -25px;}
+.cnt_visual .txt{font-size:1.7rem; line-height:32px; max-width:900px; margin:0 auto 0;}
+.cnt_visual .h4 + .txt{margin-top:22px;}
+.cnt_visual .txt + .btn_btm{margin-top:44px;}
+.cnt_visual .info{font-size:0; margin-top:90px;}
+.cnt_visual .info li{display:inline-block; font-size:1.3rem; width:25%; vertical-align:top;}
+.cnt_visual .info li .txt1{display:block; font-size:1.6rem; line-height:24px;}
+.cnt_visual .info li .txt2{display:inline-block; font-size:3.8rem; color:#000; font-weight:700; line-height:50px; font-family:'SharpSansNo1', nanumsquare;}
+.cnt_visual .info li .txt3{font-size:1.8rem; line-height:32px; margin-right:5px;}
+.cnt_visual .info li .txt1 + .txt2{margin-top:7px;}
+.cnt_visual .inner .btn.mid{min-width:200px; }
+.cnt_visual .inner .btn.mid:hover{color:#fff; background:#000;}
+.cnt_visual + .box.type1_2{margin-top:10px; padding-top:0;/* padding-bottom:175px;*/}
+.cnt_visual + .box.type1_2.ptn{margin-top:0;}
+
+.cnt_visual .hero_vb.type1{height:320px; overflow:hidden;}
+.cnt_visual .hero_vb.type1:after{display:none;}
+.cnt_visual .hero_vb.type1 .im_box .copy > .vb_txt {height:320px;}
+.cnt_visual .hero_vb.type1 + .inner{margin-bottom:75px;}
+.cnt_visual .hero_vb.type1 + .inner .txt{padding-top:75px;}
+
+.cnt_visual .hero_vb.type2{height:500px;}
+.cnt_visual .hero_vb.type2 .im_box{height:500px;}
+.cnt_visual .hero_vb.type2 .im_box .copy > .vb_txt{height:370px;}
+.cnt_visual .controls{position:absolute;bottom:156px;left:50%;margin-left:28px;}
+.cnt_visual .controls button {display:block;overflow:hidden;width:23px;height:23px;border-radius:0;border:0;background:url('https://image.samsungsds.com/global/ko/images/icon/set_ico_video.png?queryString=20170907015542') no-repeat 0 -23px; background-repeat:no-repeat;text-indent:-99999px;background-size:45px;}
+.cnt_visual .controls .play{display:none;background-position:0 0;}
+.cnt_visual .controls button:hover{background-position:-23px -23px;}
+.cnt_visual .controls .play:hover{background-position:-23px 0px;}
+
+.solu .cnt_visual .im_box .copy .tit{font-size:6.5rem; line-height: 76px;}
+.solu-all .cnt_visual .im_box .copy .tit{ font-family:"nanumsquare"}
+.caree-over .cnt_visual .im_box .copy .tit{ font-family:"nanumsquare"}
+
+#loading {
+ width: 100%;  
+ height: 100%;  
+ top: 0px;
+ left: 0px;
+ position: fixed;  
+ display: block;  
+ opacity: 0.7;  
+ background-color: #fff;  
+ z-index: 99;  
+ text-align: center; 
+}
+
+#loading-image {  
+ position: absolute;  
+ top: 50%;  
+ left: 50%; 
+ z-index: 100; 
+ }

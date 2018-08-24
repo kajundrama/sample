@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+
+    <title>LJH HomePage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet"></link>
+    
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"></link>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Vuejs -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="http://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
+
+    <!-- axios -->
+    <script src="js/axios.min.js"></script>
+    <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+    
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center-bottom" id="inputArea_idpw">
+            <h1>welcome to LJH</h1>
+            
+            <br></br>
+            
+            <form class="navbar-form">
+	            <div class="form-group">
+	              <input v-model="id_text" type="text" placeholder="Id" class="form-control" ></input>
+	            </div>
+	            <div class="form-group">
+	              <input v-on:keyup.enter="generateKey" v-model="pw_text" type="password" placeholder="Password" class="form-control"></input>
+	            </div>
+	        </form>
+            <br>
+            	<button class="btn btn-dark btn-lg" v-on:click="generateKey">Go Into</button>
+            </br>
+        </div>
+    </header>
+
+</body>
+
+<script>
+
+	function generatekeyfrompassword(inputIdPassword) {
+		 var ec3 = new KJUR.crypto.ECDSA({'curve': 'secp256k1'});
+		 
+		 //password sha256 encoding
+		 var md = new KJUR.crypto.MessageDigest({alg: "sha256", prov: "sjcl"}); // sjcl supports sha256 only
+		 md.updateString(inputIdPassword);
+		 var mdHex = md.digest();
+		 
+		 //set private key for sign
+		 privatekey = mdHex;
+		 //alert("EC3 PK : " + privatekey);
+		 //set private key for get register pubkey 
+		 ec3.setPrivateKeyHex(privatekey);
+	
+		 return ec3.prvKeyHex;
+		} 
+	
+	var data = { id_text: ''
+				  , pw_text: '',
+				  address: '',
+				  privateKey:''
+			  };
+	var app = new Vue({
+		  el: '#inputArea_idpw',
+		  
+		  //데이터 등록
+		  data: data ,
+		  //함수 등록
+		  methods: {
+			  generateKey : function() {
+				  
+					var idPassword = data.id_text + data.pw_text;
+					var privateKey = generatekeyfrompassword(idPassword);
+					console.log(privateKey);
+					data.privateKey = privateKey;
+					/* 
+					axios.post('/setSession', {"privateKey": data.privateKey}).then(response => {
+						console.log(response.data);
+						location.href = "/main.html"	
+					})
+					*/
+					
+					location.href = "/main"	
+					
+					
+			  }
+		  }
+		});
+
+    function onLoad(){
+        data.id_text = 'guest';
+        data.pw_text = 'guest';
+    }
+    onLoad();
+</script>
+
+</html>
